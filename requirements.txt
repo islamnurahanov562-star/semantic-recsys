@@ -1,0 +1,9 @@
+pandas==3.1.0
+numpy==2.5.4
+sentence-transformers==6.2.0
+faiss-cpu==1.15.1
+streamlit>=1.30
+matplotlib>=3.7
+pytest>=7.4
+black>=23.0
+flake8>=6.0
