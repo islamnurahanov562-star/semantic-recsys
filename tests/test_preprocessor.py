@@ -167,6 +167,25 @@ def test_item_ids_match_output_positions_and_are_first_column() -> None:
     assert result.index.tolist() == [0, 1]
 
 
+def test_year_uses_nullable_int64_dtype() -> None:
+    """The optional year column follows the contract's nullable Int64 dtype."""
+    dataframe = pd.DataFrame(
+        {
+            "title": ["First item title", "Second item title"],
+            "description": ["First item description", "Second item description"],
+            "year": [2020, None],
+        }
+    )
+
+    result = TextPreprocessor(["title", "description"], min_chars=1).transform(
+        dataframe
+    )
+
+    assert str(result["year"].dtype) == "Int64"
+    assert result["year"].iloc[0] == 2020
+    assert pd.isna(result["year"].iloc[1])
+
+
 def test_transform_does_not_modify_input_dataframe() -> None:
     """Cleaning and derived columns do not mutate the source DataFrame."""
     dataframe = pd.DataFrame(

@@ -70,6 +70,10 @@ class TextPreprocessor:
 
         dataframe = dataframe.reset_index(drop=True)
         dataframe["item_id"] = range(len(dataframe))
+        if "year" in dataframe.columns:
+            dataframe["year"] = pd.to_numeric(dataframe["year"], errors="raise").astype(
+                "Int64"
+            )
         output_columns = [
             "item_id",
             "title",
