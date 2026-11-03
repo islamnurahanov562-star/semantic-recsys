@@ -1,0 +1,8 @@
+{
+  "raw_path": "data/raw/netflix_titles.csv",
+  "column_map": {"listed_in": "category", "release_year": "year"},
+  "text_columns": ["title", "type", "category", "description"],
+  "output_path": "data/processed/items.csv",
+  "max_chars": 1000,
+  "min_chars": 20
+}

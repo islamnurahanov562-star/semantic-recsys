@@ -20,6 +20,7 @@ MANIFEST
 
 # Virtual environments
 .venv/
+.venv-linux/
 venv/
 ENV/
 env/
@@ -37,6 +38,9 @@ htmlcov/
 .vscode/
 
 # Project data and results
+*.npy
+*.faiss
+*.meta.json
 data/raw/*
 !data/raw/.gitkeep
 data/processed/*.npy
