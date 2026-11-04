@@ -55,15 +55,16 @@ See `docs/DATA_CARD.md` for dataset provenance, license, and known limitations (
 
 ## Usage
 
-Run the implemented data and embedding steps in order. Fill `query` and `extra_relevant_ids` in `data/processed/eval_template.csv` manually, then run the validator/builder. Search CLI and Streamlit app are planned but not implemented yet (TODO).
+Run the data and embedding steps in order. The repository includes a 60-row evaluation template with 50 drafted queries; review the queries and relevance labels against `docs/eval_draft_notes.md` before treating the set as a final benchmark. The template generator does not overwrite an existing file unless `--force` is passed. Search CLI and Streamlit app are planned but not implemented yet (TODO).
 
 ```bash
 python -m scripts.process_data
 python -m scripts.build_embeddings
-python -m scripts.make_eval_template
-# Manually annotate data/processed/eval_template.csv before continuing.
+# Review data/processed/eval_template.csv and docs/eval_draft_notes.md manually.
 python -m scripts.build_eval_queries
 ```
+
+To create a new blank template intentionally, run `python -m scripts.make_eval_template --force`, then annotate it before rebuilding `eval_queries.csv`.
 
 ## Evaluation
 
