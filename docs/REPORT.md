@@ -63,9 +63,7 @@ Explain the responsibilities of `DataLoader`, `TextPreprocessor`, `EmbeddingEnco
 - **MRR:** mean reciprocal rank of the first relevant item within the contract's top-ten cutoff; use zero when no relevant item is found.
 - **Latency:** measure each `engine.recommend()` call with `perf_counter`, report elapsed time in milliseconds, and average across evaluation queries.
 
-Document how the evaluation queries and relevant item IDs were reviewed. Query-set provenance and any additional measurement controls: TODO.
-
-<!-- TODO(owner: R4): State the exact evaluation set, implementation, and measurement controls; source: CONTRACTS.md, data/processed/eval_queries.csv (TODO), and src/evaluator.py. -->
+The evaluation set contains 50 manually reviewed queries. Relevance labels were selected by searching item descriptions with pandas `str.contains` and inspecting matching descriptions; neither the embedding model nor a vector index was used to choose labels. The run configuration, measured results, and per-query outputs are saved in [`eval_summary.json`](../results/eval_summary.json) and [`retrieval_quality.csv`](../results/retrieval_quality.csv).
 
 ## 4 Experiments
 
@@ -91,9 +89,7 @@ Compare the embedding models actually evaluated, including their configuration a
 
 ### 4.4 Retrieval Quality
 
-Report Recall@k and MRR on the reviewed evaluation queries. Include the evaluation-set definition and distinguish target criteria from observed measurements. Query set and measured values: TODO.
-
-<!-- TODO(owner: R4): Report measured quality metrics and document evaluation labels; source: data/processed/eval_queries.csv (TODO) and results/TODO_retrieval_quality.csv. -->
+The measured comparison uses 8,804 processed items and `sentence-transformers/all-MiniLM-L6-v2`. One untimed warm-up query per index precedes latency measurement with `perf_counter`; reported CPU latency is machine- and load-dependent. Results for NumPy, FAISS Flat, and FAISS IVF on the 50 reviewed queries are shown in Section 5 and are reproducible with `python -m scripts.evaluate_engine`.
 
 ### 4.5 Error Analysis
 
@@ -103,7 +99,7 @@ Inspect queries with no relevant result or low recall, group observed failure pa
 
 ## 5 Results
 
-All result cells remain TODO until the corresponding experiment has been run and checked. Link each table to its saved artifact under `results/`.
+Only the retrieval evaluation below has been run so far; index benchmarks and model comparisons remain TODO until measured.
 
 ### Index Benchmark Results
 
@@ -127,11 +123,13 @@ All result cells remain TODO until the corresponding experiment has been run and
 
 <!-- TODO(owner: R4): Populate the table from the reviewed evaluation set and measured outputs; source: results/TODO_retrieval_quality.csv. -->
 
-| Evaluation set | Recall@k | MRR | Average latency | Artifact |
-| --- | --- | --- | --- | --- |
-| TODO | TODO | TODO | TODO | [TODO: add measured retrieval file](../results/TODO_retrieval_quality.csv) |
+| Model / index | Queries | Recall@1 / @3 / @10 | HitRate@1 / @3 / @10 | MRR | Average latency (ms) | Artifacts |
+| --- | ---: | --- | --- | ---: | ---: | --- |
+| all-MiniLM-L6-v2 / NumPy | 50 | 0.2100 / 0.3200 / 0.4217 | 0.2400 / 0.3600 / 0.4800 | 0.3116 | 197.9339 | [summary](../results/eval_summary.json), [per-query](../results/retrieval_quality.csv) |
+| all-MiniLM-L6-v2 / FAISS Flat | 50 | 0.2100 / 0.3200 / 0.4217 | 0.2400 / 0.3600 / 0.4800 | 0.3116 | 66.4140 | [summary](../results/eval_summary.json), [per-query](../results/retrieval_quality.csv) |
+| all-MiniLM-L6-v2 / FAISS IVF | 50 | 0.1900 / 0.2700 / 0.3817 | 0.2200 / 0.3000 / 0.4400 | 0.2821 | 68.0107 | [summary](../results/eval_summary.json), [per-query](../results/retrieval_quality.csv) |
 
-<!-- TODO(owner: R4): Replace placeholders only with verified measurements and link committed artifacts; source: files under results/ (currently TODO). -->
+<!-- TODO(owner: R3): Add benchmark and model-comparison measurements only after those experiments run. -->
 
 ## 6 Limitations
 

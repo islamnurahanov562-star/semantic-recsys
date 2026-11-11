@@ -1,0 +1,151 @@
+index_type,query,n_relevant,first_hit_rank,recall@1,recall@3,recall@10,latency_ms
+numpy,An angel guides strangers through hardship and moral choices,1,8.0,0.0,0.0,1.0,173.37438800041127
+numpy,Women confront persecution during a turbulent European war,1,1.0,1.0,1.0,1.0,158.4317459992235
+numpy,A young woman facing illness plans for future companionship,2,9.0,0.0,0.0,0.5,213.86453200011601
+numpy,A son challenges caste barriers to honor his father,1,,0.0,0.0,0.0,215.43674699933035
+numpy,A young Filipino officer rises during a national struggle,1,2.0,0.0,1.0,1.0,196.66478999988612
+numpy,A grieving husband seeks love after a painful betrayal,1,,0.0,0.0,0.0,211.17560200036678
+numpy,Trace a business dynasty's roots and presidential journey,1,2.0,0.0,1.0,1.0,167.96488299951307
+numpy,Outlaw brothers encounter lawmen and supernatural dangers,1,,0.0,0.0,0.0,185.8450220006489
+numpy,A playful farm adventure teaches early reading skills,1,1.0,1.0,1.0,1.0,223.89996699985204
+numpy,A suspect uses television footage to challenge a murder charge,3,,0.0,0.0,0.0,191.83577900003002
+numpy,A hotheaded newcomer turns to underground fights for escape,2,,0.0,0.0,0.0,152.79293399999005
+numpy,Families witness the emotional strain of childhood cancer,2,,0.0,0.0,0.0,169.1122419997555
+numpy,A psychologist joins a survivor to hunt a predator,2,,0.0,0.0,0.0,185.1177379994624
+numpy,A last-minute football triumph changes championship history,2,1.0,0.5,0.5,1.0,230.99759400065523
+numpy,Two minds share one body and face a breaking point,1,,0.0,0.0,0.0,181.5939320003963
+numpy,A Nigerian entertainer moves between characters in concert,4,5.0,0.0,0.0,0.25,191.15792400043574
+numpy,Film characters rebel against censorship in a playful cinema,1,1.0,1.0,1.0,1.0,213.51397000034922
+numpy,A summer aquarium visit leads into an eerie ocean mystery,3,6.0,0.0,0.0,0.3333333333333333,185.36223999944923
+numpy,A teenager dreams of flying beyond a forced future,1,,0.0,0.0,0.0,183.53883400050108
+numpy,A quirky friend helps an aspiring actor make a film,1,,0.0,0.0,0.0,359.2336530000466
+numpy,A comedian finds love while navigating aging and dread,1,,0.0,0.0,0.0,227.6108269998076
+numpy,A lawyer leaves New York to reclaim a youthful romance,1,,0.0,0.0,0.0,187.18319300023722
+numpy,A comedy duo accepts a dangerous intelligence assignment,1,,0.0,0.0,0.0,178.8528220004082
+numpy,Teen friends chase a legendary stone tied to local folklore,1,,0.0,0.0,0.0,176.3033870001891
+numpy,An alien-seeking road trip turns into an unexpected romance,1,2.0,0.0,1.0,1.0,189.6727200000896
+numpy,A German comic targets social manners and everyday quirks,1,,0.0,0.0,0.0,202.75190600023052
+numpy,Two neighborhoods settle a rivalry during a major festival,1,,0.0,0.0,0.0,184.29216999993514
+numpy,A woman changes identity to marry her beloved in Spain,1,3.0,0.0,1.0,1.0,182.52188699989347
+numpy,A girl and a bear share whimsical adventures near a forest,2,2.0,0.0,0.5,0.5,206.6994099996009
+numpy,A hunted woman discovers a cosmic destiny beyond Earth,1,3.0,0.0,1.0,1.0,210.0372229997447
+numpy,A teenager hides his supernatural inheritance after dark,1,,0.0,0.0,0.0,185.49745400014217
+numpy,An airport farewell sparks a last effort to save romance,1,,0.0,0.0,0.0,186.8421010003658
+numpy,A mountain discovery draws an investigator into a frozen crime,1,1.0,1.0,1.0,1.0,175.90727300012077
+numpy,Animated friends share playful stories with lessons on kindness,1,,0.0,0.0,0.0,334.10397300031036
+numpy,A knight's descendant fights rivals while courting love,1,,0.0,0.0,0.0,197.91998799973953
+numpy,A long-buried murder points toward possible institutional abuse,1,,0.0,0.0,0.0,199.67387199994846
+numpy,Bladesmiths compete to craft historically inspired weapons,2,1.0,0.5,0.5,1.0,206.58232499954465
+numpy,A sheltered woman navigates work under an aunt's care,1,5.0,0.0,0.0,1.0,194.53653699929419
+numpy,A kidnapped woman fights to escape an inventor's AI experiment,1,1.0,1.0,1.0,1.0,231.73398900053144
+numpy,A businesswoman pursues vengeance while caught in unexpected romance,2,,0.0,0.0,0.0,182.20024299989745
+numpy,A wealthy man rethinks excess during a painful separation,1,,0.0,0.0,0.0,151.55975800007582
+numpy,Time-traveling heroes unite across rivalries to prevent catastrophe,1,1.0,1.0,1.0,1.0,210.03510799982905
+numpy,A stranded crew wakes in space with fragmented memories,1,,0.0,0.0,0.0,180.20084199997655
+numpy,A rising crime boss balances power with loyalty to locals,2,,0.0,0.0,0.0,175.38610799965682
+numpy,Six eccentric personalities lead unpredictable mockumentary lives,1,1.0,1.0,1.0,1.0,207.56656200046564
+numpy,A phone-addicted influencer faces rural life without screens,1,,0.0,0.0,0.0,172.45579100017494
+numpy,A family match sparks tentative friendship between two teenagers,1,9.0,0.0,0.0,1.0,191.10024100064038
+numpy,A proud commander leads an unpopular war toward danger,1,1.0,1.0,1.0,1.0,188.2594140006404
+numpy,A family explores ocean depths and discovers hidden wonders,2,1.0,0.5,0.5,0.5,191.6436370001975
+numpy,A zoologist observes primates and their social habits,1,1.0,1.0,1.0,1.0,196.64877600007458
+faiss-flat,An angel guides strangers through hardship and moral choices,1,8.0,0.0,0.0,1.0,81.47396300046239
+faiss-flat,Women confront persecution during a turbulent European war,1,1.0,1.0,1.0,1.0,66.46801100032462
+faiss-flat,A young woman facing illness plans for future companionship,2,9.0,0.0,0.0,0.5,80.10496000042622
+faiss-flat,A son challenges caste barriers to honor his father,1,,0.0,0.0,0.0,77.9414420003377
+faiss-flat,A young Filipino officer rises during a national struggle,1,2.0,0.0,1.0,1.0,80.68923199971323
+faiss-flat,A grieving husband seeks love after a painful betrayal,1,,0.0,0.0,0.0,74.18794000022899
+faiss-flat,Trace a business dynasty's roots and presidential journey,1,2.0,0.0,1.0,1.0,59.25077899973985
+faiss-flat,Outlaw brothers encounter lawmen and supernatural dangers,1,,0.0,0.0,0.0,72.71663600022293
+faiss-flat,A playful farm adventure teaches early reading skills,1,1.0,1.0,1.0,1.0,62.69932999930461
+faiss-flat,A suspect uses television footage to challenge a murder charge,3,,0.0,0.0,0.0,67.78948999999557
+faiss-flat,A hotheaded newcomer turns to underground fights for escape,2,,0.0,0.0,0.0,69.76996699995652
+faiss-flat,Families witness the emotional strain of childhood cancer,2,,0.0,0.0,0.0,65.32711299951188
+faiss-flat,A psychologist joins a survivor to hunt a predator,2,,0.0,0.0,0.0,65.13979299961647
+faiss-flat,A last-minute football triumph changes championship history,2,1.0,0.5,0.5,1.0,68.98583000020153
+faiss-flat,Two minds share one body and face a breaking point,1,,0.0,0.0,0.0,64.82901799972751
+faiss-flat,A Nigerian entertainer moves between characters in concert,4,5.0,0.0,0.0,0.25,111.2113679992035
+faiss-flat,Film characters rebel against censorship in a playful cinema,1,1.0,1.0,1.0,1.0,69.97747199966398
+faiss-flat,A summer aquarium visit leads into an eerie ocean mystery,3,6.0,0.0,0.0,0.3333333333333333,56.32888099989941
+faiss-flat,A teenager dreams of flying beyond a forced future,1,,0.0,0.0,0.0,75.9777760003999
+faiss-flat,A quirky friend helps an aspiring actor make a film,1,,0.0,0.0,0.0,68.07881199983967
+faiss-flat,A comedian finds love while navigating aging and dread,1,,0.0,0.0,0.0,65.79055800011702
+faiss-flat,A lawyer leaves New York to reclaim a youthful romance,1,,0.0,0.0,0.0,78.42600499952823
+faiss-flat,A comedy duo accepts a dangerous intelligence assignment,1,,0.0,0.0,0.0,61.86610799977643
+faiss-flat,Teen friends chase a legendary stone tied to local folklore,1,,0.0,0.0,0.0,59.39201799992588
+faiss-flat,An alien-seeking road trip turns into an unexpected romance,1,2.0,0.0,1.0,1.0,58.07984199964267
+faiss-flat,A German comic targets social manners and everyday quirks,1,,0.0,0.0,0.0,62.177748999602045
+faiss-flat,Two neighborhoods settle a rivalry during a major festival,1,,0.0,0.0,0.0,60.071467999478045
+faiss-flat,A woman changes identity to marry her beloved in Spain,1,3.0,0.0,1.0,1.0,56.94895800024824
+faiss-flat,A girl and a bear share whimsical adventures near a forest,2,2.0,0.0,0.5,0.5,59.150143000806565
+faiss-flat,A hunted woman discovers a cosmic destiny beyond Earth,1,3.0,0.0,1.0,1.0,47.55391799972131
+faiss-flat,A teenager hides his supernatural inheritance after dark,1,,0.0,0.0,0.0,67.65164900025411
+faiss-flat,An airport farewell sparks a last effort to save romance,1,,0.0,0.0,0.0,36.78778199991939
+faiss-flat,A mountain discovery draws an investigator into a frozen crime,1,1.0,1.0,1.0,1.0,80.01098200020351
+faiss-flat,Animated friends share playful stories with lessons on kindness,1,,0.0,0.0,0.0,117.65175799973804
+faiss-flat,A knight's descendant fights rivals while courting love,1,,0.0,0.0,0.0,81.46724000016548
+faiss-flat,A long-buried murder points toward possible institutional abuse,1,,0.0,0.0,0.0,77.26738700057467
+faiss-flat,Bladesmiths compete to craft historically inspired weapons,2,1.0,0.5,0.5,1.0,72.20849199984514
+faiss-flat,A sheltered woman navigates work under an aunt's care,1,5.0,0.0,0.0,1.0,79.9424500000896
+faiss-flat,A kidnapped woman fights to escape an inventor's AI experiment,1,1.0,1.0,1.0,1.0,58.08543899911456
+faiss-flat,A businesswoman pursues vengeance while caught in unexpected romance,2,,0.0,0.0,0.0,55.438605000745156
+faiss-flat,A wealthy man rethinks excess during a painful separation,1,,0.0,0.0,0.0,50.61123599989514
+faiss-flat,Time-traveling heroes unite across rivalries to prevent catastrophe,1,1.0,1.0,1.0,1.0,48.02469799960818
+faiss-flat,A stranded crew wakes in space with fragmented memories,1,,0.0,0.0,0.0,48.12367600061407
+faiss-flat,A rising crime boss balances power with loyalty to locals,2,,0.0,0.0,0.0,52.600014999370615
+faiss-flat,Six eccentric personalities lead unpredictable mockumentary lives,1,1.0,1.0,1.0,1.0,47.665572999903816
+faiss-flat,A phone-addicted influencer faces rural life without screens,1,,0.0,0.0,0.0,51.554048999605584
+faiss-flat,A family match sparks tentative friendship between two teenagers,1,9.0,0.0,0.0,1.0,52.48009700062539
+faiss-flat,A proud commander leads an unpopular war toward danger,1,1.0,1.0,1.0,1.0,46.91521800032206
+faiss-flat,A family explores ocean depths and discovers hidden wonders,2,1.0,0.5,0.5,0.5,74.80638499964698
+faiss-flat,A zoologist observes primates and their social habits,1,1.0,1.0,1.0,1.0,73.0001940000875
+faiss-ivf,An angel guides strangers through hardship and moral choices,1,5.0,0.0,0.0,1.0,130.75167600072746
+faiss-ivf,Women confront persecution during a turbulent European war,1,1.0,1.0,1.0,1.0,83.21783900009905
+faiss-ivf,A young woman facing illness plans for future companionship,2,5.0,0.0,0.0,0.5,69.33204599954479
+faiss-ivf,A son challenges caste barriers to honor his father,1,,0.0,0.0,0.0,66.33775099999184
+faiss-ivf,A young Filipino officer rises during a national struggle,1,2.0,0.0,1.0,1.0,66.87467299980199
+faiss-ivf,A grieving husband seeks love after a painful betrayal,1,,0.0,0.0,0.0,58.02659599976323
+faiss-ivf,Trace a business dynasty's roots and presidential journey,1,,0.0,0.0,0.0,66.3066320003054
+faiss-ivf,Outlaw brothers encounter lawmen and supernatural dangers,1,,0.0,0.0,0.0,68.28866900013963
+faiss-ivf,A playful farm adventure teaches early reading skills,1,1.0,1.0,1.0,1.0,77.2554309996849
+faiss-ivf,A suspect uses television footage to challenge a murder charge,3,,0.0,0.0,0.0,65.24705999981961
+faiss-ivf,A hotheaded newcomer turns to underground fights for escape,2,,0.0,0.0,0.0,129.05969900020864
+faiss-ivf,Families witness the emotional strain of childhood cancer,2,,0.0,0.0,0.0,68.08405100036907
+faiss-ivf,A psychologist joins a survivor to hunt a predator,2,,0.0,0.0,0.0,61.30326999937097
+faiss-ivf,A last-minute football triumph changes championship history,2,1.0,0.5,0.5,1.0,45.34744000011415
+faiss-ivf,Two minds share one body and face a breaking point,1,,0.0,0.0,0.0,32.81699000035587
+faiss-ivf,A Nigerian entertainer moves between characters in concert,4,4.0,0.0,0.0,0.25,69.34328499937692
+faiss-ivf,Film characters rebel against censorship in a playful cinema,1,1.0,1.0,1.0,1.0,53.408796999974584
+faiss-ivf,A summer aquarium visit leads into an eerie ocean mystery,3,6.0,0.0,0.0,0.3333333333333333,29.121575000317534
+faiss-ivf,A teenager dreams of flying beyond a forced future,1,,0.0,0.0,0.0,49.92103000040515
+faiss-ivf,A quirky friend helps an aspiring actor make a film,1,,0.0,0.0,0.0,78.74431799973536
+faiss-ivf,A comedian finds love while navigating aging and dread,1,,0.0,0.0,0.0,71.3644289999138
+faiss-ivf,A lawyer leaves New York to reclaim a youthful romance,1,,0.0,0.0,0.0,78.31703800002288
+faiss-ivf,A comedy duo accepts a dangerous intelligence assignment,1,,0.0,0.0,0.0,61.91036600012012
+faiss-ivf,Teen friends chase a legendary stone tied to local folklore,1,,0.0,0.0,0.0,54.09480700018321
+faiss-ivf,An alien-seeking road trip turns into an unexpected romance,1,2.0,0.0,1.0,1.0,67.45517099989229
+faiss-ivf,A German comic targets social manners and everyday quirks,1,,0.0,0.0,0.0,113.30035999981192
+faiss-ivf,Two neighborhoods settle a rivalry during a major festival,1,,0.0,0.0,0.0,70.80671299991081
+faiss-ivf,A woman changes identity to marry her beloved in Spain,1,3.0,0.0,1.0,1.0,47.743807999722776
+faiss-ivf,A girl and a bear share whimsical adventures near a forest,2,1.0,0.5,0.5,0.5,82.29766699969332
+faiss-ivf,A hunted woman discovers a cosmic destiny beyond Earth,1,2.0,0.0,1.0,1.0,47.799281000152405
+faiss-ivf,A teenager hides his supernatural inheritance after dark,1,,0.0,0.0,0.0,69.03312399936112
+faiss-ivf,An airport farewell sparks a last effort to save romance,1,,0.0,0.0,0.0,39.87847899952612
+faiss-ivf,A mountain discovery draws an investigator into a frozen crime,1,1.0,1.0,1.0,1.0,38.05514899977425
+faiss-ivf,Animated friends share playful stories with lessons on kindness,1,,0.0,0.0,0.0,54.78893599956791
+faiss-ivf,A knight's descendant fights rivals while courting love,1,,0.0,0.0,0.0,58.910275000016554
+faiss-ivf,A long-buried murder points toward possible institutional abuse,1,,0.0,0.0,0.0,92.42318100041302
+faiss-ivf,Bladesmiths compete to craft historically inspired weapons,2,,0.0,0.0,0.0,89.04377099952399
+faiss-ivf,A sheltered woman navigates work under an aunt's care,1,5.0,0.0,0.0,1.0,72.93634400048177
+faiss-ivf,A kidnapped woman fights to escape an inventor's AI experiment,1,1.0,1.0,1.0,1.0,49.06868300076894
+faiss-ivf,A businesswoman pursues vengeance while caught in unexpected romance,2,,0.0,0.0,0.0,117.33868499959499
+faiss-ivf,A wealthy man rethinks excess during a painful separation,1,,0.0,0.0,0.0,42.45721500046784
+faiss-ivf,Time-traveling heroes unite across rivalries to prevent catastrophe,1,1.0,1.0,1.0,1.0,93.953065000278
+faiss-ivf,A stranded crew wakes in space with fragmented memories,1,,0.0,0.0,0.0,58.33472500034986
+faiss-ivf,A rising crime boss balances power with loyalty to locals,2,,0.0,0.0,0.0,92.52695099985431
+faiss-ivf,Six eccentric personalities lead unpredictable mockumentary lives,1,,0.0,0.0,0.0,62.46833400018659
+faiss-ivf,A phone-addicted influencer faces rural life without screens,1,7.0,0.0,0.0,1.0,60.783920000176295
+faiss-ivf,A family match sparks tentative friendship between two teenagers,1,9.0,0.0,0.0,1.0,63.43463899975177
+faiss-ivf,A proud commander leads an unpopular war toward danger,1,1.0,1.0,1.0,1.0,51.12623600052757
+faiss-ivf,A family explores ocean depths and discovers hidden wonders,2,1.0,0.5,0.5,0.5,51.685678000467306
+faiss-ivf,A zoologist observes primates and their social habits,1,1.0,1.0,1.0,1.0,78.40941100039345

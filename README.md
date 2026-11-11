@@ -7,7 +7,7 @@ Semantic Recommendation Engine is an in-progress local semantic search project o
 - Semantic search over Netflix titles by meaning.
 - Normalized text embeddings with inner product used as cosine similarity.
 - Exact NumPy baseline and exact FAISS Flat / approximate FAISS IVF vector search.
-- Evaluation with Recall@K, MRR, and query latency; measured results: TODO.
+- Evaluation with Recall@K, HitRate@K, MRR, and query latency; measured results are saved under `results/`.
 - Streamlit search demo: TODO.
 
 ## Architecture
@@ -17,7 +17,7 @@ Semantic Recommendation Engine is an in-progress local semantic search project o
 - `src/encoder.py` — `EmbeddingEncoder`: creates normalized SentenceTransformers embeddings and saves or loads NumPy arrays.
 - `src/index.py` — `BaseIndex`, `NumpyIndex`, `FaissIndex`: common vector-search interface, exact NumPy and FAISS Flat search, and approximate FAISS IVF search.
 - `src/engine.py` — `RecommendationEngine`: combines the encoder, index, and item metadata.
-- `src/factory.py` — `build_engine`: constructs the recommendation pipeline (TODO: implementation).
+- `src/factory.py` — `build_engine`: loads item and embedding data and constructs a selected vector index.
 - `src/evaluator.py` — `Evaluator`: computes ranking metrics and average query latency.
 - `src/app.py` — Streamlit interface for interactive recommendations (TODO: implementation).
 
@@ -63,15 +63,20 @@ python -m scripts.build_embeddings
 python -m scripts.make_eval_template
 # Manually annotate data/processed/eval_template.csv before continuing.
 python -m scripts.build_eval_queries
+python -m scripts.evaluate_engine
 ```
 
 ## Evaluation
 
-TODO: add measured results from `results/`. Do not replace TODO values with targets or estimates.
+The table was measured on 8,804 catalog items and 50 manually reviewed queries using `sentence-transformers/all-MiniLM-L6-v2`. Query labels were prepared by inspecting item descriptions; no embedding search was used to select relevance labels. Latency measures `engine.recommend()` on CPU after one untimed warm-up query per index and can vary by machine and load. Run `python -m scripts.evaluate_engine --index-type numpy` to reproduce only the NumPy baseline; the default evaluates all three indexes.
 
-| Model / index | Recall@1 | Recall@3 | Recall@10 | MRR | Average latency (ms) |
-| --- | --- | --- | --- | --- | --- |
-| TODO | TODO | TODO | TODO | TODO | TODO |
+| Model / index | Queries | Recall@1 | HitRate@1 | Recall@3 | HitRate@3 | Recall@10 | HitRate@10 | MRR | Average latency (ms) |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| all-MiniLM-L6-v2 / NumPy | 50 | 0.2100 | 0.2400 | 0.3200 | 0.3600 | 0.4217 | 0.4800 | 0.3116 | 197.9339 |
+| all-MiniLM-L6-v2 / FAISS Flat | 50 | 0.2100 | 0.2400 | 0.3200 | 0.3600 | 0.4217 | 0.4800 | 0.3116 | 66.4140 |
+| all-MiniLM-L6-v2 / FAISS IVF | 50 | 0.1900 | 0.2200 | 0.2700 | 0.3000 | 0.3817 | 0.4400 | 0.2821 | 68.0107 |
+
+Per-query metrics: [results/retrieval_quality.csv](results/retrieval_quality.csv). Run metadata and aggregate metrics: [results/eval_summary.json](results/eval_summary.json).
 
 ## Project Structure
 
@@ -92,12 +97,15 @@ semantic-recsys/
 │   └── figures/
 ├── notebooks/
 │   └── 01_eda.py
-├── results/                    # TODO: measured evaluation results
+├── results/
+│   ├── eval_summary.json       # aggregate metrics and run configuration
+│   └── retrieval_quality.csv   # per-query metrics and latency
 ├── scripts/
 │   ├── process_data.py
 │   ├── make_eval_template.py
 │   ├── build_eval_queries.py
 │   ├── build_embeddings.py
+│   ├── evaluate_engine.py
 │   └── search_cli.py            # TODO: planned after Gate C
 ├── src/
 │   ├── data_loader.py
