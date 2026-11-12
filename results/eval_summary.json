@@ -13,7 +13,7 @@
         "recall@10": 0.4217,
         "hit_rate@10": 0.48,
         "mrr": 0.3116,
-        "avg_latency_ms": 197.9339
+        "avg_latency_ms": 182.4211
       }
     },
     "faiss-flat": {
@@ -27,7 +27,7 @@
         "recall@10": 0.4217,
         "hit_rate@10": 0.48,
         "mrr": 0.3116,
-        "avg_latency_ms": 66.414
+        "avg_latency_ms": 75.9509
       }
     },
     "faiss-ivf": {
@@ -41,7 +41,7 @@
         "recall@10": 0.3817,
         "hit_rate@10": 0.44,
         "mrr": 0.2821,
-        "avg_latency_ms": 68.0107
+        "avg_latency_ms": 65.6676
       }
     }
   }
