@@ -50,3 +50,5 @@ results/*
 !results/.gitkeep
 !results/eval_summary.json
 !results/retrieval_quality.csv
+!results/metrics_*.json
+!results/per_query_*.csv

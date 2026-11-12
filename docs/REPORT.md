@@ -125,9 +125,9 @@ Only the retrieval evaluation below has been run so far; index benchmarks and mo
 
 | Model / index | Queries | Recall@1 / @3 / @10 | HitRate@1 / @3 / @10 | MRR | Average latency (ms) | Artifacts |
 | --- | ---: | --- | --- | ---: | ---: | --- |
-| all-MiniLM-L6-v2 / NumPy | 50 | 0.2100 / 0.3200 / 0.4217 | 0.2400 / 0.3600 / 0.4800 | 0.3116 | 182.4211 | [summary](../results/eval_summary.json), [per-query](../results/retrieval_quality.csv) |
-| all-MiniLM-L6-v2 / FAISS Flat | 50 | 0.2100 / 0.3200 / 0.4217 | 0.2400 / 0.3600 / 0.4800 | 0.3116 | 75.9509 | [summary](../results/eval_summary.json), [per-query](../results/retrieval_quality.csv) |
-| all-MiniLM-L6-v2 / FAISS IVF | 50 | 0.1900 / 0.2700 / 0.3817 | 0.2200 / 0.3000 / 0.4400 | 0.2821 | 65.6676 | [summary](../results/eval_summary.json), [per-query](../results/retrieval_quality.csv) |
+| all-MiniLM-L6-v2 / NumPy | 50 | 0.2100 / 0.3200 / 0.4217 | 0.2400 / 0.3600 / 0.4800 | 0.3116 | 234.1056 | [metrics](../results/metrics_numpy.json), [per-query](../results/per_query_numpy.csv) |
+| all-MiniLM-L6-v2 / FAISS Flat | 50 | 0.2100 / 0.3200 / 0.4217 | 0.2400 / 0.3600 / 0.4800 | 0.3116 | 74.4520 | [metrics](../results/metrics_faiss-flat.json), [per-query](../results/per_query_faiss-flat.csv) |
+| all-MiniLM-L6-v2 / FAISS IVF | 50 | 0.1900 / 0.2700 / 0.3817 | 0.2200 / 0.3000 / 0.4400 | 0.2821 | 76.6147 | [metrics](../results/metrics_faiss-ivf.json), [per-query](../results/per_query_faiss-ivf.csv) |
 
 <!-- TODO(owner: R3): Add benchmark and model-comparison measurements only after those experiments run. -->
 

@@ -67,20 +67,24 @@ python -m scripts.make_eval_template
 python -m scripts.build_eval_queries
 python -m scripts.search_cli --query "a sad story about astronauts" --k 3
 # Omit --query to start the interactive search prompt.
+python -m scripts.run_evaluation --index numpy
+python -m scripts.run_evaluation --index faiss-flat
+python -m scripts.run_evaluation --index faiss-ivf
+python -m scripts.error_analysis --index faiss-flat --worst 10
 python -m scripts.evaluate_engine
 ```
 
 ## Evaluation
 
-The table was measured on 8,804 catalog items and 50 manually reviewed queries using `sentence-transformers/all-MiniLM-L6-v2`. Query labels were prepared by inspecting item descriptions; no embedding search was used to select relevance labels. Latency measures `engine.recommend()` on CPU after one untimed warm-up query per index and can vary by machine and load. Run `python -m scripts.evaluate_engine --index-type numpy` to reproduce only the NumPy baseline; the default evaluates all three indexes.
+The table was measured on 8,804 catalog items and 50 manually reviewed queries using `sentence-transformers/all-MiniLM-L6-v2`. Query labels were prepared by inspecting item descriptions; no embedding search was used to select relevance labels. Latency measures `engine.recommend()` on CPU after one untimed warm-up query per index and can vary by machine and load. `python -m scripts.run_evaluation --index <numpy|faiss-flat|faiss-ivf>` reproduces one row and writes its metrics and per-query CSV under `results/`.
 
 | Model / index | Queries | Recall@1 | HitRate@1 | Recall@3 | HitRate@3 | Recall@10 | HitRate@10 | MRR | Average latency (ms) |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| all-MiniLM-L6-v2 / NumPy | 50 | 0.2100 | 0.2400 | 0.3200 | 0.3600 | 0.4217 | 0.4800 | 0.3116 | 182.4211 |
-| all-MiniLM-L6-v2 / FAISS Flat | 50 | 0.2100 | 0.2400 | 0.3200 | 0.3600 | 0.4217 | 0.4800 | 0.3116 | 75.9509 |
-| all-MiniLM-L6-v2 / FAISS IVF | 50 | 0.1900 | 0.2200 | 0.2700 | 0.3000 | 0.3817 | 0.4400 | 0.2821 | 65.6676 |
+| all-MiniLM-L6-v2 / NumPy | 50 | 0.2100 | 0.2400 | 0.3200 | 0.3600 | 0.4217 | 0.4800 | 0.3116 | 234.1056 |
+| all-MiniLM-L6-v2 / FAISS Flat | 50 | 0.2100 | 0.2400 | 0.3200 | 0.3600 | 0.4217 | 0.4800 | 0.3116 | 74.4520 |
+| all-MiniLM-L6-v2 / FAISS IVF | 50 | 0.1900 | 0.2200 | 0.2700 | 0.3000 | 0.3817 | 0.4400 | 0.2821 | 76.6147 |
 
-Per-query metrics: [results/retrieval_quality.csv](results/retrieval_quality.csv). Run metadata and aggregate metrics: [results/eval_summary.json](results/eval_summary.json).
+Per-query metrics and run metadata: [NumPy](results/per_query_numpy.csv), [FAISS Flat](results/per_query_faiss-flat.csv), [FAISS IVF](results/per_query_faiss-ivf.csv); aggregate metrics are in the matching `results/metrics_<index>.json` files.
 
 ## Project Structure
 
