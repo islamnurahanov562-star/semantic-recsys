@@ -7,6 +7,7 @@ Semantic Recommendation Engine is an in-progress local semantic search project o
 - Semantic search over Netflix titles by meaning.
 - Normalized text embeddings with inner product used as cosine similarity.
 - Exact NumPy baseline and exact FAISS Flat / approximate FAISS IVF vector search.
+- One-shot and interactive command-line search with optional category filtering.
 - Evaluation with Recall@K, HitRate@K, MRR, and query latency; measured results are saved under `results/`.
 - Streamlit search demo: TODO.
 
@@ -19,6 +20,7 @@ Semantic Recommendation Engine is an in-progress local semantic search project o
 - `src/engine.py` — `RecommendationEngine`: combines the encoder, index, and item metadata.
 - `src/factory.py` — `build_engine`: loads item and embedding data and constructs a selected vector index.
 - `src/evaluator.py` — `Evaluator`: computes ranking metrics and average query latency.
+- `scripts/search_cli.py` — one-shot and interactive semantic search from the terminal.
 - `src/app.py` — Streamlit interface for interactive recommendations (TODO: implementation).
 
 ```mermaid
@@ -55,7 +57,7 @@ See `docs/DATA_CARD.md` for dataset provenance, license, and known limitations (
 
 ## Usage
 
-Run the implemented data and embedding steps in order. Fill `query` and `extra_relevant_ids` in `data/processed/eval_template.csv` manually, then run the validator/builder. Search CLI and Streamlit app are planned but not implemented yet (TODO).
+Run the implemented data and embedding steps in order. Fill `query` and `extra_relevant_ids` in `data/processed/eval_template.csv` manually, then run the validator/builder. Streamlit remains planned and is not implemented yet.
 
 ```bash
 python -m scripts.process_data
@@ -63,6 +65,8 @@ python -m scripts.build_embeddings
 python -m scripts.make_eval_template
 # Manually annotate data/processed/eval_template.csv before continuing.
 python -m scripts.build_eval_queries
+python -m scripts.search_cli --query "a sad story about astronauts" --k 3
+# Omit --query to start the interactive search prompt.
 python -m scripts.evaluate_engine
 ```
 
@@ -106,14 +110,14 @@ semantic-recsys/
 │   ├── build_eval_queries.py
 │   ├── build_embeddings.py
 │   ├── evaluate_engine.py
-│   └── search_cli.py            # TODO: planned after Gate C
+│   └── search_cli.py
 ├── src/
 │   ├── data_loader.py
 │   ├── preprocessor.py
 │   ├── encoder.py
 │   ├── index.py
 │   ├── engine.py
-│   ├── factory.py               # TODO
+│   ├── factory.py
 │   ├── evaluator.py
 │   └── app.py                   # TODO
 ├── tests/

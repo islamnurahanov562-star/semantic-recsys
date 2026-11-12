@@ -36,6 +36,10 @@ def build_engine(
     Raises:
         ValueError: If the catalog, embedding matrix, or index type is invalid.
         FileNotFoundError: If ``items_path`` does not exist.
+
+    Example:
+        >>> engine = build_engine(index_type="numpy")
+        >>> recommendations = engine.recommend("a story about space", k=3)
     """
     if index_type not in {"numpy", "faiss-flat", "faiss-ivf"}:
         raise ValueError("index_type must be 'numpy', 'faiss-flat', or 'faiss-ivf'.")
