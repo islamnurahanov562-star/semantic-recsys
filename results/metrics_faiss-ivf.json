@@ -1,0 +1,26 @@
+{
+  "model": "sentence-transformers/all-MiniLM-L6-v2",
+  "index": "faiss-ivf",
+  "n_items": 8804,
+  "n_queries": 50,
+  "latency_warmup_queries": 1,
+  "versions": {
+    "python": "3.14.4",
+    "numpy": "2.5.4",
+    "pandas": "3.1.0",
+    "sentence_transformers": "6.2.0",
+    "faiss": "1.15.1"
+  },
+  "date": "2026-11-12T06:21:02.584744+00:00",
+  "metrics": {
+    "n_queries": 50,
+    "recall@1": 0.19,
+    "hit_rate@1": 0.22,
+    "recall@3": 0.27,
+    "hit_rate@3": 0.3,
+    "recall@10": 0.3817,
+    "hit_rate@10": 0.44,
+    "mrr": 0.2821,
+    "avg_latency_ms": 76.6147
+  }
+}

@@ -1,0 +1,15 @@
+# Demo Script: Semantic Recommendation Engine
+
+Target duration: 3 minutes, approximately 390 spoken words. Use the Streamlit app at `http://localhost:8501` and the saved figures under `docs/figures/`.
+
+| Time | On screen | Narration |
+| --- | --- | --- |
+| 0:00–0:20 | Open the app and show the search field. | Keyword search is useful when we know a title or phrase, but it can miss a story described in different words. This project explores local semantic retrieval over Netflix titles: a query is represented as a vector and compared with vectors for catalog items. |
+| 0:20–0:50 | Show the architecture diagram in README, then the index selector. | The data pipeline reads and preprocesses the catalog with Pandas. SentenceTransformers encodes each item's title, type, genre, and description. Normalized vectors are searched by NumPy or FAISS. The same recommendation engine can use an exact NumPy baseline, exact FAISS Flat, or approximate FAISS IVF index. |
+| 0:50–1:50 | Run the three queries below. Show result titles, score, description, the category filter, and search time. | First, I will search for “A son challenges caste barriers to honor his father.” The result list includes titles whose descriptions share related themes, and I can restrict results to a genre. Next, I will try “A summer aquarium visit leads into an eerie ocean mystery.” Finally, “A grieving husband seeks love after a painful betrayal.” In each case, the app shows ranked titles, categories, cosine-similarity scores, and descriptions. Search time is shown beneath the results. The query examples come from the reviewed evaluation set. |
+| 1:50–2:30 | Open `docs/figures/model_comparison.png`, then the Evaluation table in README. | We evaluated 50 queries against 8,804 processed items. With all-MiniLM-L6-v2, NumPy and FAISS Flat both achieved Recall@3 of 0.3200 and MRR of 0.3116. The multilingual MiniLM model achieved Recall@3 of 0.4217 and MRR of 0.4394 on this same English query set. On the synthetic benchmark, IVF searched the 100,000-vector set in 0.2496 milliseconds per query, but its recall against Flat was 0.067. These are measurements from this environment, not universal performance guarantees. |
+| 2:30–3:00 | Show the repository structure and error-analysis draft. | The repository separates data preparation, encoding, indexes, the engine, and evaluation. The project roles cover architecture and integration, data preparation, embeddings and indexes, and evaluation and documentation. The error-analysis file records weak queries and possible label gaps; those judgments should be reviewed before changing labels. The system has no user-rating signal, and its evaluation set is small. |
+
+## Attribution Check Before Recording
+
+The narration describes project roles, not verified personal ownership. Before recording, replace the role summary with two accurate sentences per participant, checked against the team's merged pull requests and confirmed by the participants. Do not infer individual credit from module names alone.

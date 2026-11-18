@@ -1,8 +1,10 @@
 """Tests for evaluation-query validation and relevance ID parsing."""
 
+from pathlib import Path
+
 import pandas as pd
 
-from scripts.build_eval_queries import EvalQueryValidator, _build_output
+from scripts.build_eval_queries import EvalQueryValidator, _build_output, main
 
 
 def _items() -> pd.DataFrame:
@@ -130,3 +132,44 @@ def test_missing_columns_do_not_hide_other_detectable_problems() -> None:
     assert any("extra_relevant_ids" in issue for issue in issues)
     assert any("description" in issue for issue in issues)
     assert any("at least three words" in issue for issue in issues)
+
+
+def test_main_preserves_numeric_extra_ids_when_other_cells_are_empty(
+    tmp_path: Path,
+) -> None:
+    """CSV ID columns remain strings when numeric values share a column with blanks."""
+    template_path = tmp_path / "eval_template.csv"
+    items_path = tmp_path / "items.csv"
+    output_path = tmp_path / "eval_queries.csv"
+    pd.DataFrame(
+        {
+            "item_id": [0, 1],
+            "query": ["Discover a distant planet", "Explore a peaceful garden"],
+            "extra_relevant_ids": ["2", ""],
+        }
+    ).to_csv(template_path, index=False)
+    pd.DataFrame(
+        {
+            "item_id": [0, 1, 2],
+            "description": [
+                "A traveler searches the night sky.",
+                "A family tends flowers near home.",
+                "An astronomer maps a distant world.",
+            ],
+        }
+    ).to_csv(items_path, index=False)
+
+    exit_code = main(
+        [
+            "--template",
+            str(template_path),
+            "--items",
+            str(items_path),
+            "--out",
+            str(output_path),
+        ]
+    )
+
+    assert exit_code == 0
+    result = pd.read_csv(output_path, dtype=str)
+    assert result["relevant_ids"].tolist() == ["0|2", "1"]

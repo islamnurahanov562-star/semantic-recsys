@@ -255,8 +255,8 @@ def main(argv: Sequence[str] | None = None) -> int:
     )
 
     try:
-        template = pd.read_csv(args.template)
-        items = pd.read_csv(args.items)
+        template = pd.read_csv(args.template, dtype=str)
+        items = pd.read_csv(args.items, dtype=str)
     except (OSError, ValueError) as error:
         logger.error("Could not read evaluation inputs: %s", error)
         return 1
