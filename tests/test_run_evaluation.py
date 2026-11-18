@@ -87,3 +87,32 @@ def test_main_saves_metrics_metadata_and_per_query_csv(
     assert result["date"]
     assert result["metrics"]["recall@1"] == 0.75
     assert per_query.shape[0] == 2
+
+
+@pytest.mark.parametrize(
+    ("columns", "rows"),
+    [
+        (["query", "relevant_ids"], []),
+        (["query"], [["query one"]]),
+    ],
+)
+def test_main_rejects_invalid_evaluation_input_before_building_engine(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+    columns: list[str],
+    rows: list[list[str]],
+) -> None:
+    """Invalid query files fail before engine construction or result writes."""
+    monkeypatch.chdir(tmp_path)
+    eval_path = tmp_path / "eval_queries.csv"
+    pd.DataFrame(rows, columns=columns).to_csv(eval_path, index=False)
+
+    def unexpected_build_engine(**kwargs: object) -> FakeEngine:
+        pytest.fail("The engine should not be built for invalid evaluation input.")
+
+    monkeypatch.setattr(run_evaluation, "build_engine", unexpected_build_engine)
+
+    exit_code = run_evaluation.main(["--eval", str(eval_path)])
+
+    assert exit_code == 1
+    assert not Path("results").exists()

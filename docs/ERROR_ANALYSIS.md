@@ -32,7 +32,7 @@
   - 2. Life of An Outcast (Dramas), score=0.3971
   - 3. Material (Comedies), score=0.3914
 
-Failure type: TODO (data issue | ambiguous query | model limitation | other)
+Failure type: other (possible label incompleteness). The query clearly matches the source description. `Life of An Outcast` also describes caste bias and a father helping his son, so the relevance set may omit a plausible match.
 
 ### A grieving husband seeks love after a painful betrayal
 
@@ -45,7 +45,7 @@ Failure type: TODO (data issue | ambiguous query | model limitation | other)
   - 2. Finding Hubby (Comedies), score=0.4246
   - 3. Time Please (Comedies), score=0.4196
 
-Failure type: TODO (data issue | ambiguous query | model limitation | other)
+Failure type: model limitation. The source description matches betrayal followed by a new relationship, but the top results match generic title terms such as "husband" and "love".
 
 ### Outlaw brothers encounter lawmen and supernatural dangers
 
@@ -58,7 +58,7 @@ Failure type: TODO (data issue | ambiguous query | model limitation | other)
   - 2. The Brothers Grimm (Action & Adventure), score=0.5503
   - 3. Malevolent (Horror Movies), score=0.5229
 
-Failure type: TODO (data issue | ambiguous query | model limitation | other)
+Failure type: model limitation. The source description combines bank-robbing brothers, lawmen, and demons; the top results match only subsets of those concepts.
 
 ### A suspect uses television footage to challenge a murder charge
 
@@ -73,7 +73,7 @@ Failure type: TODO (data issue | ambiguous query | model limitation | other)
   - 2. The Murder Detectives (British TV Shows), score=0.5711
   - 3. 20 Minutes (Crime TV Shows), score=0.5570
 
-Failure type: TODO (data issue | ambiguous query | model limitation | other)
+Failure type: model limitation. `Long Shot` directly matches the television-footage clue but is not retrieved. The other two labels concern murder cases without that clue and should be reviewed separately.
 
 ### A hotheaded newcomer turns to underground fights for escape
 
@@ -87,7 +87,7 @@ Failure type: TODO (data issue | ambiguous query | model limitation | other)
   - 2. S.W.A.T.: Under Siege (Action & Adventure), score=0.4398
   - 3. Fallen (Thrillers), score=0.4332
 
-Failure type: TODO (data issue | ambiguous query | model limitation | other)
+Failure type: model limitation. Both source descriptions explicitly mention joining an underground fight club, while the top result is an unrelated spy film matching the word "Underground".
 
 ### Families witness the emotional strain of childhood cancer
 
@@ -101,7 +101,7 @@ Failure type: TODO (data issue | ambiguous query | model limitation | other)
   - 2. Dad (Dramas), score=0.4426
   - 3. If Anything Happens I Love You (Dramas), score=0.3935
 
-Failure type: TODO (data issue | ambiguous query | model limitation | other)
+Failure type: other (label incompleteness). `Diamonds in the Sky` in the top results describes families affected by cancer and appears relevant, but is absent from the labels. `Weed the People` is narrower and should also be reviewed.
 
 ### A psychologist joins a survivor to hunt a predator
 
@@ -115,7 +115,7 @@ Failure type: TODO (data issue | ambiguous query | model limitation | other)
   - 2. Hunt for the Wilderpeople (Action & Adventure), score=0.4578
   - 3. The Victims' Game (Crime TV Shows), score=0.4452
 
-Failure type: TODO (data issue | ambiguous query | model limitation | other)
+Failure type: model limitation. `Kiss the Girls` matches the psychologist-and-survivor description closely but is not retrieved. `The Women and the Murderer` is only a partial match and should be reviewed.
 
 ### Two minds share one body and face a breaking point
 
@@ -128,7 +128,7 @@ Failure type: TODO (data issue | ambiguous query | model limitation | other)
   - 2. The Mind, Explained (Docuseries), score=0.4011
   - 3. The Body Remembers When the World Broke Open (Dramas), score=0.3976
 
-Failure type: TODO (data issue | ambiguous query | model limitation | other)
+Failure type: model limitation. The source description explicitly states that two siblings share one body; the top results match isolated title words such as "face", "mind", and "body".
 
 ### A teenager dreams of flying beyond a forced future
 
@@ -141,7 +141,7 @@ Failure type: TODO (data issue | ambiguous query | model limitation | other)
   - 2. Memories of a Teenager (Dramas), score=0.4463
   - 3. Imperial Dreams (Dramas), score=0.4288
 
-Failure type: TODO (data issue | ambiguous query | model limitation | other)
+Failure type: model limitation. The source description directly connects the girl's wish to become a pilot with her father's marriage plan, but the top results match "dream" and "teenager" without that situation.
 
 ### A quirky friend helps an aspiring actor make a film
 
@@ -154,17 +154,17 @@ Failure type: TODO (data issue | ambiguous query | model limitation | other)
   - 2. Friend Request (Horror Movies), score=0.5352
   - 3. Friendship (Action & Adventure), score=0.5258
 
-Failure type: TODO (data issue | ambiguous query | model limitation | other)
+Failure type: model limitation. The source description matches an aspiring actor, an unusual friend, and making a movie; the top results primarily match the word "friend".
 
-## Manual Summary
+## Review Summary
 
-- Data issue: TODO
-- Ambiguous query: TODO
-- Model limitation: TODO
-- Other: TODO
+This draft assigns 8 of the 10 cases primarily to model limitation and 2 to possible label incompleteness. No primary data issue or ambiguous-query case was identified in this sample. These are review judgments based on the saved item descriptions and retrieved results, not an automatic diagnosis or a claim that the sample represents all 50 queries.
 
-## Proposed Fixes
+A check of the raw and processed CSVs found zero occurrences of the suspected strings `tripinto`, `murderhe`, and `newlife`; no preprocessing change is justified by those examples.
 
-1. TODO
-2. TODO
-3. TODO
+## Proposed Follow-up
+
+1. Review the relevance sets for `Manusangada`, the television-footage query, the childhood-cancer query, and the psychologist query; change labels only after confirming candidates against descriptions.
+2. Compare title-plus-description embeddings against description-only embeddings on the same fixed query and relevance set to test whether title-word overlap affects these cases.
+3. Tune FAISS IVF `nprobe` and report the recall/latency trade-off; the current saved run uses the default configuration.
+4. Investigate raw-data cleaning only if a concrete malformed value is found in the source file; the three suspected glued tokens were not found.

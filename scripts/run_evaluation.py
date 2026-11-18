@@ -67,6 +67,14 @@ def main(argv: Sequence[str] | None = None) -> int:
             args.eval,
             dtype={"query": "string", "relevant_ids": "string"},
         )
+        missing_columns = {"query", "relevant_ids"}.difference(eval_df.columns)
+        if missing_columns:
+            raise ValueError(
+                f"Evaluation CSV is missing columns: {sorted(missing_columns)}"
+            )
+        if eval_df.empty:
+            raise ValueError("Evaluation CSV must contain at least one query.")
+
         engine = build_engine(
             items_path=args.items,
             model_name=args.model,
